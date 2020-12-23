@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  bottle:
+    container_name: bottle
+    build: ./bottle
+    ports:
+      - "8080:8080"
+
+  streamlit:
+    container_name: streamlit
+    build: ./streamlit
+#    links:
+#      - bottle
+    ports:
+      - "8501:8501"

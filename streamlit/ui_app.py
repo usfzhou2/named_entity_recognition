@@ -6,7 +6,7 @@ returns the result of named entity recognition.
 import streamlit as st
 import requests
 
-BACKEND = "http://localhost:8080/api"
+BACKEND = "http://bottle:8080/api"
 SPACY_LINK = "https://spacy.io/api/annotation#named-entities"
 
 
@@ -26,8 +26,9 @@ if st.button("Submit"):
         result = parse_text(text, BACKEND)
         if not result:
             st.write("Did not recognize any entities")
-        for label, entities in result.items():
-            st.write(f"{label}: {', '.join(entity for entity in entities)}")
+        st.write(result)
+        # for label, entities in result.items():
+        #     st.write(f"{label}: {', '.join(entity for entity in entities)}")
     else:
         st.warning("Please type or paste your text first!")
 

@@ -9,15 +9,18 @@ from nlp_spacy import named_entity_recognition
 app = Bottle()
 
 
+@app.route("/")
+def test():
+    """A webpage used to test the service connection"""
+    return "test"
+
+
 @app.post("/api")
-def main():
-    """
-    Parse a given text and return the NER result.
-    """
-    text = request.body.read().decode("utf-8")
+def api():
+    """An API that other clients can use to parse a given text and get the NER result"""
+    text = str(request.body.read())  #.decode("utf-8")
     result = named_entity_recognition(text)
     return result
 
 
-# if __name__ == "main":
-app.run()
+app.run(host="0.0.0.0", port=8080, debug=True, reloader=True)
