@@ -8,6 +8,6 @@ The simple UI is built using Streamlit and allows the user to enter text and see
 Docker Compose is used to run the application. For each component (Service and UI), a docker file is written to create an individual Docker Container. A docker-compose yaml file is written to start both the Service and the UI.
 
 Use the following command to start the application:
-	docker-compose up
+`docker-compose up`
 
 Visit localhost:8501 to use the Streamlit UI. The application may run slowly because of the spaCy NER processes.
