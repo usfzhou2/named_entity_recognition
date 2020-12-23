@@ -16,22 +16,24 @@ def parse_text(text, server):
     return response.json()
 
 
+# title and header
 st.title("Named Entity Recognition")
 st.header("")
 st.write("This web application offers named entity recognition using spaCy NLP library.")
 
+# enter text and output the NER result
 text = st.text_area("", "Type or Paste Your Text to Start", height=150)
 if st.button("Submit"):
     if text:
         result = parse_text(text, BACKEND)
         if not result:
             st.write("Did not recognize any entities")
-        st.write(result)
-        # for label, entities in result.items():
-        #     st.write(f"{label}: {', '.join(entity for entity in entities)}")
+        for label, entities in result.items():
+            st.write(f"{label}: {', '.join(ent for ent in entities)}")
     else:
         st.warning("Please type or paste your text first!")
 
+# spaCy NER description
 for _ in range(3):
     st.write("")
 st.write("A detailed description of the entity types can be found via the following link:")

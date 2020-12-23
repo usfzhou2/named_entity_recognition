@@ -10,7 +10,5 @@ services:
   streamlit:
     container_name: streamlit
     build: ./streamlit
-#    links:
-#      - bottle
     ports:
       - "8501:8501"

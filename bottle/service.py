@@ -18,7 +18,7 @@ def test():
 @app.post("/api")
 def api():
     """An API that other clients can use to parse a given text and get the NER result"""
-    text = str(request.body.read())  #.decode("utf-8")
+    text = request.body.read().decode("utf-8")
     result = named_entity_recognition(text)
     return result
 
