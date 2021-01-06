@@ -17,8 +17,8 @@ For easy execution, make sure that [Docker Engine](https://docs.docker.com/get-d
 Download this repo and make it the current directory using the following commands in Terminal:
 
 ```
-git clone https://github.com/usfzhou2/zhentao-1600.git
-cd zhentao-1600
+git clone https://github.com/usfzhou2/named_entity_recognition.git
+cd named_entity_recognition
 ```
 
 Then, use this command to start the application:
